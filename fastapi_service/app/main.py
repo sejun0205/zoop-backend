@@ -9,8 +9,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://zoop-frontend-sable.vercel.app",
-        "https://zoopzoop.shop"
+    
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -31,7 +30,7 @@ class Filter(BaseModel):
 
 
 
-@app.post("/crawl")
+@app.post("")
 async def crawl_estate_data(data: Filter):
 
     search_condition = {
@@ -65,7 +64,7 @@ async def crawl_estate_data(data: Filter):
         }
     }
 
-@app.post("/{article_no}/crawl")
+@app.post("")
 async def crawl_estate_data_by_article_no(article_no: str, data: Filter):
     print(f"받은 articleNo: {article_no}")
 
@@ -78,9 +77,6 @@ async def crawl_estate_data_by_article_no(article_no: str, data: Filter):
         "data": property_id
     }
 
-@app.get("/health")
-async def health():
-    return {"status": "ok"}
 
 
 
