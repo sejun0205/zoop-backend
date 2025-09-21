@@ -9,8 +9,7 @@ services:
       POSTGRES_DB: mydb
       POSTGRES_USER: myuser
       POSTGRES_PASSWORD: mypass
-    ports:
-      - "6543:5432"
+    
     volumes:
       - postgres-data-local:/var/lib/postgresql/data
 
@@ -31,7 +30,7 @@ services:
       SPRING_DATASOURCE_PASSWORD: mypass
 
       KAKAO_CLIENT_ID: ${KAKAO_CLIENT_ID}
-      KAKAO_REDIRECT_URI: http://localhost:18080/users/auth/kakao/callback
+      KAKAO_REDIRECT_URI: 
       JWT_SECRET_KEY: ${JWT_SECRET_KEY}
 
       FRONT_BASE_URL: ""              # 상대 경로
@@ -45,7 +44,7 @@ services:
     depends_on: [db]
     environment:
       # FastAPI 쪽 DB 접속
-      DB_URL: postgresql://myuser:mypass@db:5432/mydb
+      DB_URL: postgresql://myuser:mypass@db:/mydb
     ports:
       - "8000:8000"
     volumes:
