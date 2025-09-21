@@ -47,7 +47,7 @@ logging:
 
 server:
   port: 8080
-  address: 0.0.0.0
+
   env: ${ENV:prod}
   name: ${SERVER_NAME:unknown}
 
@@ -62,7 +62,7 @@ springdoc:
     doc-expansion: none
 
 app:
-  base-url: https://zoopzoop.shop
+  base-url: 
 
 jwt:
   secret: ${JWT_SECRET_KEY}  # prod 환경에서는 환경변수로 주입
@@ -86,17 +86,17 @@ spring:
       on-profile: local
 
   datasource:
-    url: jdbc:postgresql://localhost:6543/mydb
+    url: jdbc:postgresql://
     username: myuser
     password: mypass
 
 
 jwt:
-  secret: Z6z3q5Lg7FscPqaLfJl5yFjO3PrMnxKfaThgq9e02ZbJY5GgnM0IMK3PMkSzr8lq
+  secret: 
 
 kakao:
-  client-id: b5cac5dbe8078dd547ed5f7fdd805738
-  redirect-uri: http://localhost:8080/users/auth/kakao/callback
+  client-id: 
+  redirect-uri: 
 
 front:
   base-url: ""
