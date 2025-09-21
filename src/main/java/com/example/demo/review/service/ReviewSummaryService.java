@@ -52,7 +52,7 @@ public class ReviewSummaryService {
                 property.getSectionName();
 
         URI uri = UriComponentsBuilder
-                .fromHttpUrl("http://1.230.77.225:8000")
+                .fromHttpUrl("")
                 .pathSegment("metajson", fullAddress, "summaries")
                 .build()
                 .encode(StandardCharsets.UTF_8)
